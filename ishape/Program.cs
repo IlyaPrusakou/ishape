@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ishape
+namespace ishape // interface
 {
     public interface IShape
     {
@@ -14,7 +14,7 @@ namespace ishape
             set;
         }
     }
-    class Round : IShape
+    class Round : IShape // realize interface
     {
         public double radius { get; set; }
         public string title { get; set; }
@@ -36,7 +36,7 @@ namespace ishape
             }
         }
     }
-    class Rectangle: IShape
+    class Rectangle: IShape // realize interface
     {
         public double aside { get; set; }
         public double bside { get; set; }
@@ -59,7 +59,7 @@ namespace ishape
             }
         }
     }
-    class Square: IShape
+    class Square: IShape // realize interface
     {
         public double side { get; set; }
         public string title { get; set; }
@@ -83,7 +83,7 @@ namespace ishape
     }
     class Program
     {
-        public static IShape[,] CreateShape()
+        public static IShape[,] CreateShape() // create massive
         {
             IShape[,] mas = new IShape[10, 3];
             for (int i = 0; i < 3; i++)
@@ -112,7 +112,7 @@ namespace ishape
             }
             return mas;
         }
-        public static void PrintShape()
+        public static void PrintShape() // render massive
         {
             IShape[,] renderMas = CreateShape();
             for (int i = 0; i < 10; i++)
